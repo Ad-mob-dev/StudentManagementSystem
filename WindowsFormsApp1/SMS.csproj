@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/WindowsFormsApp1/</UpdateUrl>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DF30075B2632D80CEBF69FCD9A1DEA828CDC4D17</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D1B08ED-BB66-4B22-B7BB-ED11FC96EF32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attendance.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cdetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="flogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Gpa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty Menu.Designer.cs">
+      <DependentUpon>Faculty Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="makeupSchedule.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sattendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sattendance.Designer.cs">
+      <DependentUpon>Sattendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMMS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMMS.Designer.cs">
+      <DependentUpon>SMMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlCon.cs" />
+    <Compile Include="Student Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student Menu.Designer.cs">
+      <DependentUpon>Student Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentRegisteredCourses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentRegisteredCourses.Designer.cs">
+      <DependentUpon>StudentRegisteredCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRegisterCourse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddRegisterCourse.Designer.cs">
+      <DependentUpon>AddRegisterCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMMS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FMMS.Designer.cs">
+      <DependentUpon>FMMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddClassSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddClassSchedule.Designer.cs">
+      <DependentUpon>AddClassSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMakeUpClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentMakeUpClass.Designer.cs">
+      <DependentUpon>StudentMakeUpClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGenerateResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FGenerateResult.Designer.cs">
+      <DependentUpon>FGenerateResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddStudentAttendance.Designer.cs">
+      <DependentUpon>AddStudentAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRegistry.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentResults.Designer.cs">
+      <DependentUpon>StudentResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TotalCourseMark.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty Menu.resx">
+      <DependentUpon>Faculty Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sattendance.resx">
+      <DependentUpon>Sattendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMMS.resx">
+      <DependentUpon>SMMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Menu.resx">
+      <DependentUpon>Student Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRegisteredCourses.resx">
+      <DependentUpon>StudentRegisteredCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRegisterCourse.resx">
+      <DependentUpon>AddRegisterCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMMS.resx">
+      <DependentUpon>FMMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClassSchedule.resx">
+      <DependentUpon>AddClassSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentMakeUpClass.resx">
+      <DependentUpon>StudentMakeUpClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGenerateResult.resx">
+      <DependentUpon>FGenerateResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudentAttendance.resx">
+      <DependentUpon>AddStudentAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentResults.resx">
+      <DependentUpon>StudentResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SMS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\357697-plain-black-background-1920x1080-for-retina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31Gj4aaf4GL._SX425_.jpg" />
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11855660_1482352372079402_4647585737661156962_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31Gj4aaf4GL._SX425_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\courses bckg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\courses bckg1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo indus uni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admission.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13729039-1234236373254710-6871926732885584876-n-50-1530780033.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-edit-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teacher-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyring-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App-login-manager-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyring-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\courses bckg2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31Gj4aaf4GL._SX425_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract_blue_colorful_mosaic_background_vector_design_6817840.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-arrow-technology-logo-vector-21005618.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gabriel-aul-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_JD-06_2625478.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_JD-04_2625523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_JD-01_2625526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_JD-14_2625516.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Netvibes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cjdowner-Cryptocurrency-Flat-Stratis-STRAT.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Designbump.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Foursquare.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Myspace.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Handstitch-Social-Slideshare.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Dzone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Dzone1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designbolts-Embossed-Social-Dzone2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foursquare-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foursquare-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

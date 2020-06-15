@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e00d184f0a614bbf86f1d4106589fcf4" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="tloginModel.Attendance" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.Cdetail" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.flogin" Width="1.5" PointX="9.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.Gpa" Width="1.5" PointX="11.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.StudentRegistry" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.TotalCourseMark" Width="1.5" PointX="9.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tloginModel.makeupSchedule" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="tloginModel.FK_Attendance_Cdetails" ManuallyRouted="false" />
+        <AssociationConnector Association="tloginModel.FK_Attendance_StudentRegistry" ManuallyRouted="false" />
+        <AssociationConnector Association="tloginModel.FK_makeupSchedule_Cdetails" ManuallyRouted="false" />
+        <AssociationConnector Association="tloginModel.FK_Gpa_StudentRegistry" ManuallyRouted="false" />
+        <AssociationConnector Association="tloginModel.FK_Gpa_TotalCourseMarks" ManuallyRouted="false" />
+        <AssociationConnector Association="tloginModel.FK_TotalCourseMarks_StudentRegistry" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tloginModelStoreContainer" CdmEntityContainer="tloginEntities1">
+    <EntitySetMapping Name="Attendances">
+      <EntityTypeMapping TypeName="tloginModel.Attendance">
+        <MappingFragment StoreEntitySet="Attendance">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Attendance1" ColumnName="Attendance" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cdetails">
+      <EntityTypeMapping TypeName="tloginModel.Cdetail">
+        <MappingFragment StoreEntitySet="Cdetails">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+          <ScalarProperty Name="CreditHours" ColumnName="CreditHours" />
+          <ScalarProperty Name="TimeTable" ColumnName="TimeTable" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flogins">
+      <EntityTypeMapping TypeName="tloginModel.flogin">
+        <MappingFragment StoreEntitySet="flogin">
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gpas">
+      <EntityTypeMapping TypeName="tloginModel.Gpa">
+        <MappingFragment StoreEntitySet="Gpa">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="CreditHours" ColumnName="CreditHours" />
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="ObtainedMarks" ColumnName="ObtainedMarks" />
+          <ScalarProperty Name="Gpa1" ColumnName="Gpa" />
+          <ScalarProperty Name="GradePoint" ColumnName="GradePoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentRegistries">
+      <EntityTypeMapping TypeName="tloginModel.StudentRegistry">
+        <MappingFragment StoreEntitySet="StudentRegistry">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalCourseMarks">
+      <EntityTypeMapping TypeName="tloginModel.TotalCourseMark">
+        <MappingFragment StoreEntitySet="TotalCourseMarks">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="CourseId1" ColumnName="CourseId1" />
+          <ScalarProperty Name="CourseTitle1" ColumnName="CourseTitle1" />
+          <ScalarProperty Name="CreditHours1" ColumnName="CreditHours1" />
+          <ScalarProperty Name="ObtainedMarks1" ColumnName="ObtainedMarks1" />
+          <ScalarProperty Name="TotalMarks1" ColumnName="TotalMarks1" />
+          <ScalarProperty Name="CourseId2" ColumnName="CourseId2" />
+          <ScalarProperty Name="CourseTitle2" ColumnName="CourseTitle2" />
+          <ScalarProperty Name="CreditHours2" ColumnName="CreditHours2" />
+          <ScalarProperty Name="ObtainedMarks2" ColumnName="ObtainedMarks2" />
+          <ScalarProperty Name="TotalMarks2" ColumnName="TotalMarks2" />
+          <ScalarProperty Name="CourseId3" ColumnName="CourseId3" />
+          <ScalarProperty Name="CourseTitle3" ColumnName="CourseTitle3" />
+          <ScalarProperty Name="CreditHours3" ColumnName="CreditHours3" />
+          <ScalarProperty Name="ObtainedMarks3" ColumnName="ObtainedMarks3" />
+          <ScalarProperty Name="TotalMarks3" ColumnName="TotalMarks3" />
+          <ScalarProperty Name="CourseId4" ColumnName="CourseId4" />
+          <ScalarProperty Name="CourseTitle4" ColumnName="CourseTitle4" />
+          <ScalarProperty Name="CreditHours4" ColumnName="CreditHours4" />
+          <ScalarProperty Name="ObtainedMarks4" ColumnName="ObtainedMarks4" />
+          <ScalarProperty Name="TotalMarks4" ColumnName="TotalMarks4" />
+          <ScalarProperty Name="CourseId5" ColumnName="CourseId5" />
+          <ScalarProperty Name="CourseTitle5" ColumnName="CourseTitle5" />
+          <ScalarProperty Name="CreditHours5" ColumnName="CreditHours5" />
+          <ScalarProperty Name="ObtainedMarks5" ColumnName="ObtainedMarks5" />
+          <ScalarProperty Name="TotalMarks5" ColumnName="TotalMarks5" />
+          <ScalarProperty Name="CourseId6" ColumnName="CourseId6" />
+          <ScalarProperty Name="CourseTitle6" ColumnName="CourseTitle6" />
+          <ScalarProperty Name="CreditHours6" ColumnName="CreditHours6" />
+          <ScalarProperty Name="ObtainedMarks6" ColumnName="ObtainedMarks6" />
+          <ScalarProperty Name="TotalMarks6" ColumnName="TotalMarks6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="makeupSchedules">
+      <EntityTypeMapping TypeName="tloginModel.makeupSchedule">
+        <MappingFragment StoreEntitySet="makeupSchedule">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

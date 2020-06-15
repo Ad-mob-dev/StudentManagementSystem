@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tloginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Attendance" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Batch" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+          <Property Name="CourseTitle" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cdetails">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="CourseTitle" />
+          </Key>
+          <Property Name="CourseId" Type="int" Nullable="false" />
+          <Property Name="CourseTitle" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CreditHours" Type="int" Nullable="false" />
+          <Property Name="TimeTable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batch" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flogin">
+          <Key>
+            <PropertyRef Name="FacultyId" />
+          </Key>
+          <Property Name="FacultyId" Type="int" Nullable="false" />
+          <Property Name="Pass" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gpa">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="StudentName" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batch" Type="varchar" MaxLength="50" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" />
+          <Property Name="CreditHours" Type="int" />
+          <Property Name="TotalMarks" Type="int" />
+          <Property Name="ObtainedMarks" Type="int" />
+          <Property Name="Gpa" Type="float" />
+          <Property Name="GradePoint" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tlogin.dbo.makeupSchedule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="makeupSchedule">
+          <Key>
+            <PropertyRef Name="Day" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="Room" />
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="CourseTitle" />
+            <PropertyRef Name="Batch" />
+            <PropertyRef Name="Semester" />
+            <PropertyRef Name="Teacher" />
+          </Key>
+          <Property Name="Day" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Time" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Room" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+          <Property Name="CourseTitle" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Batch" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Teacher" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentRegistry">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="int" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'tlogin.dbo.stulogin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="stulogin">
+          <Property Name="Username" Type="varchar" MaxLength="10" />
+          <Property Name="Pass" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="TotalCourseMarks">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="StudentName" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batch" Type="varchar" MaxLength="50" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" />
+          <Property Name="CourseId1" Type="int" />
+          <Property Name="CourseTitle1" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours1" Type="int" />
+          <Property Name="ObtainedMarks1" Type="int" />
+          <Property Name="TotalMarks1" Type="int" />
+          <Property Name="CourseId2" Type="int" />
+          <Property Name="CourseTitle2" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours2" Type="int" />
+          <Property Name="ObtainedMarks2" Type="int" />
+          <Property Name="TotalMarks2" Type="int" />
+          <Property Name="CourseId3" Type="int" />
+          <Property Name="CourseTitle3" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours3" Type="int" />
+          <Property Name="ObtainedMarks3" Type="int" />
+          <Property Name="TotalMarks3" Type="int" />
+          <Property Name="CourseId4" Type="int" />
+          <Property Name="CourseTitle4" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours4" Type="int" />
+          <Property Name="ObtainedMarks4" Type="int" />
+          <Property Name="TotalMarks4" Type="int" />
+          <Property Name="CourseId5" Type="int" />
+          <Property Name="CourseTitle5" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours5" Type="int" />
+          <Property Name="ObtainedMarks5" Type="int" />
+          <Property Name="TotalMarks5" Type="int" />
+          <Property Name="CourseId6" Type="int" />
+          <Property Name="CourseTitle6" Type="varchar" MaxLength="40" />
+          <Property Name="CreditHours6" Type="int" />
+          <Property Name="ObtainedMarks6" Type="int" />
+          <Property Name="TotalMarks6" Type="int" />
+        </EntityType>
+        <Association Name="FK_Attendance_Cdetails">
+          <End Role="Cdetails" Type="Self.Cdetails" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cdetails">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attendance_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cdetails_Cdetails">
+          <End Role="Cdetails" Type="Self.Cdetails" Multiplicity="1" />
+          <End Role="Cdetails1" Type="Self.Cdetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cdetails">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Principal>
+            <Dependent Role="Cdetails1">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gpa_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="Gpa" Type="Self.Gpa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="Gpa">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gpa_TotalCourseMarks">
+          <End Role="TotalCourseMarks" Type="Self.TotalCourseMarks" Multiplicity="1" />
+          <End Role="Gpa" Type="Self.Gpa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TotalCourseMarks">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Principal>
+            <Dependent Role="Gpa">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_makeupSchedule_Cdetails">
+          <End Role="Cdetails" Type="Self.Cdetails" Multiplicity="1" />
+          <End Role="makeupSchedule" Type="Self.makeupSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cdetails">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Principal>
+            <Dependent Role="makeupSchedule">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentRegistry_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="StudentRegistry1" Type="Self.StudentRegistry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="StudentRegistry1">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TotalCourseMarks_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="TotalCourseMarks" Type="Self.TotalCourseMarks" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="TotalCourseMarks">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tloginModelStoreContainer">
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cdetails" EntityType="Self.Cdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flogin" EntityType="Self.flogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gpa" EntityType="Self.Gpa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentRegistry" EntityType="Self.StudentRegistry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TotalCourseMarks" EntityType="Self.TotalCourseMarks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="makeupSchedule" EntityType="Self.makeupSchedule" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [makeupSchedule].[Day] AS [Day], 
+    [makeupSchedule].[Date] AS [Date], 
+    [makeupSchedule].[Time] AS [Time], 
+    [makeupSchedule].[Room] AS [Room], 
+    [makeupSchedule].[CourseId] AS [CourseId], 
+    [makeupSchedule].[CourseTitle] AS [CourseTitle], 
+    [makeupSchedule].[Batch] AS [Batch], 
+    [makeupSchedule].[Semester] AS [Semester], 
+    [makeupSchedule].[Teacher] AS [Teacher]
+    FROM [dbo].[makeupSchedule] AS [makeupSchedule]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Attendance_Cdetails" Association="Self.FK_Attendance_Cdetails">
+            <End Role="Cdetails" EntitySet="Cdetails" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attendance_StudentRegistry" Association="Self.FK_Attendance_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistry" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cdetails_Cdetails" Association="Self.FK_Cdetails_Cdetails">
+            <End Role="Cdetails" EntitySet="Cdetails" />
+            <End Role="Cdetails1" EntitySet="Cdetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gpa_StudentRegistry" Association="Self.FK_Gpa_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistry" />
+            <End Role="Gpa" EntitySet="Gpa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gpa_TotalCourseMarks" Association="Self.FK_Gpa_TotalCourseMarks">
+            <End Role="TotalCourseMarks" EntitySet="TotalCourseMarks" />
+            <End Role="Gpa" EntitySet="Gpa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_makeupSchedule_Cdetails" Association="Self.FK_makeupSchedule_Cdetails">
+            <End Role="Cdetails" EntitySet="Cdetails" />
+            <End Role="makeupSchedule" EntitySet="makeupSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentRegistry_StudentRegistry" Association="Self.FK_StudentRegistry_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistry" />
+            <End Role="StudentRegistry1" EntitySet="StudentRegistry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TotalCourseMarks_StudentRegistry" Association="Self.FK_TotalCourseMarks_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistry" />
+            <End Role="TotalCourseMarks" EntitySet="TotalCourseMarks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tloginModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Attendance1" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <Property Name="CourseTitle" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cdetail" Relationship="Self.FK_Attendance_Cdetails" FromRole="Attendance" ToRole="Cdetails" />
+          <NavigationProperty Name="StudentRegistry" Relationship="Self.FK_Attendance_StudentRegistry" FromRole="Attendance" ToRole="StudentRegistry" />
+        </EntityType>
+        <EntityType Name="Cdetail">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="CourseTitle" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <Property Name="CourseTitle" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreditHours" Type="Int32" Nullable="false" />
+          <Property Name="TimeTable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Attendances" Relationship="Self.FK_Attendance_Cdetails" FromRole="Cdetails" ToRole="Attendance" />
+          <NavigationProperty Name="makeupSchedules" Relationship="Self.FK_makeupSchedule_Cdetails" FromRole="Cdetails" ToRole="makeupSchedule" />
+        </EntityType>
+        <EntityType Name="flogin">
+          <Key>
+            <PropertyRef Name="FacultyId" />
+          </Key>
+          <Property Name="FacultyId" Type="Int32" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gpa">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="StudentName" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours" Type="Int32" />
+          <Property Name="TotalMarks" Type="Int32" />
+          <Property Name="ObtainedMarks" Type="Int32" />
+          <Property Name="Gpa1" Type="Double" />
+          <Property Name="GradePoint" Type="Double" />
+          <NavigationProperty Name="StudentRegistry" Relationship="Self.FK_Gpa_StudentRegistry" FromRole="Gpa" ToRole="StudentRegistry" />
+          <NavigationProperty Name="TotalCourseMark" Relationship="Self.FK_Gpa_TotalCourseMarks" FromRole="Gpa" ToRole="TotalCourseMarks" />
+        </EntityType>
+        <EntityType Name="StudentRegistry">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Attendances" Relationship="Self.FK_Attendance_StudentRegistry" FromRole="StudentRegistry" ToRole="Attendance" />
+          <NavigationProperty Name="Gpa" Relationship="Self.FK_Gpa_StudentRegistry" FromRole="StudentRegistry" ToRole="Gpa" />
+          <NavigationProperty Name="TotalCourseMark" Relationship="Self.FK_TotalCourseMarks_StudentRegistry" FromRole="StudentRegistry" ToRole="TotalCourseMarks" />
+        </EntityType>
+        <EntityType Name="TotalCourseMark">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="StudentName" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseId1" Type="Int32" />
+          <Property Name="CourseTitle1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours1" Type="Int32" />
+          <Property Name="ObtainedMarks1" Type="Int32" />
+          <Property Name="TotalMarks1" Type="Int32" />
+          <Property Name="CourseId2" Type="Int32" />
+          <Property Name="CourseTitle2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours2" Type="Int32" />
+          <Property Name="ObtainedMarks2" Type="Int32" />
+          <Property Name="TotalMarks2" Type="Int32" />
+          <Property Name="CourseId3" Type="Int32" />
+          <Property Name="CourseTitle3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours3" Type="Int32" />
+          <Property Name="ObtainedMarks3" Type="Int32" />
+          <Property Name="TotalMarks3" Type="Int32" />
+          <Property Name="CourseId4" Type="Int32" />
+          <Property Name="CourseTitle4" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours4" Type="Int32" />
+          <Property Name="ObtainedMarks4" Type="Int32" />
+          <Property Name="TotalMarks4" Type="Int32" />
+          <Property Name="CourseId5" Type="Int32" />
+          <Property Name="CourseTitle5" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours5" Type="Int32" />
+          <Property Name="ObtainedMarks5" Type="Int32" />
+          <Property Name="TotalMarks5" Type="Int32" />
+          <Property Name="CourseId6" Type="Int32" />
+          <Property Name="CourseTitle6" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CreditHours6" Type="Int32" />
+          <Property Name="ObtainedMarks6" Type="Int32" />
+          <Property Name="TotalMarks6" Type="Int32" />
+          <NavigationProperty Name="Gpa" Relationship="Self.FK_Gpa_TotalCourseMarks" FromRole="TotalCourseMarks" ToRole="Gpa" />
+          <NavigationProperty Name="StudentRegistry" Relationship="Self.FK_TotalCourseMarks_StudentRegistry" FromRole="TotalCourseMarks" ToRole="StudentRegistry" />
+        </EntityType>
+        <EntityType Name="makeupSchedule">
+          <Key>
+            <PropertyRef Name="Day" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="Room" />
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="CourseTitle" />
+            <PropertyRef Name="Batch" />
+            <PropertyRef Name="Semester" />
+            <PropertyRef Name="Teacher" />
+          </Key>
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Room" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <Property Name="CourseTitle" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cdetail" Relationship="Self.FK_makeupSchedule_Cdetails" FromRole="makeupSchedule" ToRole="Cdetails" />
+        </EntityType>
+        <Association Name="FK_Attendance_Cdetails">
+          <End Role="Cdetails" Type="Self.Cdetail" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cdetails">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attendance_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_makeupSchedule_Cdetails">
+          <End Role="Cdetails" Type="Self.Cdetail" Multiplicity="1" />
+          <End Role="makeupSchedule" Type="Self.makeupSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cdetails">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Principal>
+            <Dependent Role="makeupSchedule">
+              <PropertyRef Name="CourseId" />
+              <PropertyRef Name="CourseTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gpa_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="Gpa" Type="Self.Gpa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="Gpa">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gpa_TotalCourseMarks">
+          <End Role="TotalCourseMarks" Type="Self.TotalCourseMark" Multiplicity="1" />
+          <End Role="Gpa" Type="Self.Gpa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TotalCourseMarks">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Principal>
+            <Dependent Role="Gpa">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TotalCourseMarks_StudentRegistry">
+          <End Role="StudentRegistry" Type="Self.StudentRegistry" Multiplicity="1" />
+          <End Role="TotalCourseMarks" Type="Self.TotalCourseMark" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StudentRegistry">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="TotalCourseMarks">
+              <PropertyRef Name="StudentId" />
+              <PropertyRef Name="StudentName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tloginEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attendances" EntityType="Self.Attendance" />
+          <EntitySet Name="Cdetails" EntityType="Self.Cdetail" />
+          <EntitySet Name="flogins" EntityType="Self.flogin" />
+          <EntitySet Name="Gpas" EntityType="Self.Gpa" />
+          <EntitySet Name="StudentRegistries" EntityType="Self.StudentRegistry" />
+          <EntitySet Name="TotalCourseMarks" EntityType="Self.TotalCourseMark" />
+          <EntitySet Name="makeupSchedules" EntityType="Self.makeupSchedule" />
+          <AssociationSet Name="FK_Attendance_Cdetails" Association="Self.FK_Attendance_Cdetails">
+            <End Role="Cdetails" EntitySet="Cdetails" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attendance_StudentRegistry" Association="Self.FK_Attendance_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistries" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_makeupSchedule_Cdetails" Association="Self.FK_makeupSchedule_Cdetails">
+            <End Role="Cdetails" EntitySet="Cdetails" />
+            <End Role="makeupSchedule" EntitySet="makeupSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gpa_StudentRegistry" Association="Self.FK_Gpa_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistries" />
+            <End Role="Gpa" EntitySet="Gpas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gpa_TotalCourseMarks" Association="Self.FK_Gpa_TotalCourseMarks">
+            <End Role="TotalCourseMarks" EntitySet="TotalCourseMarks" />
+            <End Role="Gpa" EntitySet="Gpas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TotalCourseMarks_StudentRegistry" Association="Self.FK_TotalCourseMarks_StudentRegistry">
+            <End Role="StudentRegistry" EntitySet="StudentRegistries" />
+            <End Role="TotalCourseMarks" EntitySet="TotalCourseMarks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tloginModelStoreContainer" CdmEntityContainer="tloginEntities1">
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="tloginModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Attendance1" ColumnName="Attendance" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cdetails">
+            <EntityTypeMapping TypeName="tloginModel.Cdetail">
+              <MappingFragment StoreEntitySet="Cdetails">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+                <ScalarProperty Name="CreditHours" ColumnName="CreditHours" />
+                <ScalarProperty Name="TimeTable" ColumnName="TimeTable" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flogins">
+            <EntityTypeMapping TypeName="tloginModel.flogin">
+              <MappingFragment StoreEntitySet="flogin">
+                <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gpas">
+            <EntityTypeMapping TypeName="tloginModel.Gpa">
+              <MappingFragment StoreEntitySet="Gpa">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="CreditHours" ColumnName="CreditHours" />
+                <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+                <ScalarProperty Name="ObtainedMarks" ColumnName="ObtainedMarks" />
+                <ScalarProperty Name="Gpa1" ColumnName="Gpa" />
+                <ScalarProperty Name="GradePoint" ColumnName="GradePoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentRegistries">
+            <EntityTypeMapping TypeName="tloginModel.StudentRegistry">
+              <MappingFragment StoreEntitySet="StudentRegistry">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TotalCourseMarks">
+            <EntityTypeMapping TypeName="tloginModel.TotalCourseMark">
+              <MappingFragment StoreEntitySet="TotalCourseMarks">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="CourseId1" ColumnName="CourseId1" />
+                <ScalarProperty Name="CourseTitle1" ColumnName="CourseTitle1" />
+                <ScalarProperty Name="CreditHours1" ColumnName="CreditHours1" />
+                <ScalarProperty Name="ObtainedMarks1" ColumnName="ObtainedMarks1" />
+                <ScalarProperty Name="TotalMarks1" ColumnName="TotalMarks1" />
+                <ScalarProperty Name="CourseId2" ColumnName="CourseId2" />
+                <ScalarProperty Name="CourseTitle2" ColumnName="CourseTitle2" />
+                <ScalarProperty Name="CreditHours2" ColumnName="CreditHours2" />
+                <ScalarProperty Name="ObtainedMarks2" ColumnName="ObtainedMarks2" />
+                <ScalarProperty Name="TotalMarks2" ColumnName="TotalMarks2" />
+                <ScalarProperty Name="CourseId3" ColumnName="CourseId3" />
+                <ScalarProperty Name="CourseTitle3" ColumnName="CourseTitle3" />
+                <ScalarProperty Name="CreditHours3" ColumnName="CreditHours3" />
+                <ScalarProperty Name="ObtainedMarks3" ColumnName="ObtainedMarks3" />
+                <ScalarProperty Name="TotalMarks3" ColumnName="TotalMarks3" />
+                <ScalarProperty Name="CourseId4" ColumnName="CourseId4" />
+                <ScalarProperty Name="CourseTitle4" ColumnName="CourseTitle4" />
+                <ScalarProperty Name="CreditHours4" ColumnName="CreditHours4" />
+                <ScalarProperty Name="ObtainedMarks4" ColumnName="ObtainedMarks4" />
+                <ScalarProperty Name="TotalMarks4" ColumnName="TotalMarks4" />
+                <ScalarProperty Name="CourseId5" ColumnName="CourseId5" />
+                <ScalarProperty Name="CourseTitle5" ColumnName="CourseTitle5" />
+                <ScalarProperty Name="CreditHours5" ColumnName="CreditHours5" />
+                <ScalarProperty Name="ObtainedMarks5" ColumnName="ObtainedMarks5" />
+                <ScalarProperty Name="TotalMarks5" ColumnName="TotalMarks5" />
+                <ScalarProperty Name="CourseId6" ColumnName="CourseId6" />
+                <ScalarProperty Name="CourseTitle6" ColumnName="CourseTitle6" />
+                <ScalarProperty Name="CreditHours6" ColumnName="CreditHours6" />
+                <ScalarProperty Name="ObtainedMarks6" ColumnName="ObtainedMarks6" />
+                <ScalarProperty Name="TotalMarks6" ColumnName="TotalMarks6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="makeupSchedules">
+            <EntityTypeMapping TypeName="tloginModel.makeupSchedule">
+              <MappingFragment StoreEntitySet="makeupSchedule">
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Room" ColumnName="Room" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
